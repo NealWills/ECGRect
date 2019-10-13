@@ -85,6 +85,50 @@ extension ECGReactWrapper where Base: NSView {
         }
     }
     
+    //MARK:- Destinate
+    /// trailing
+    public var trailing: CGFloat {
+        set {
+            let origin = self.base.frame.origin
+            let size = self.base.frame.size
+            self.base.frame = CGRect.init(x: origin.x, y: origin.y, width: newValue - origin.x, height: size.height)
+        }
+        get {
+            let origin = self.base.frame.origin
+            let size = self.base.frame.size
+            return origin.x + size.width
+        }
+    }
+    
+    /// bottom
+    public var bottom: CGFloat {
+        set {
+            let origin = self.base.frame.origin
+            let size = self.base.frame.size
+            self.base.frame = CGRect.init(x: origin.x, y: origin.y, width: size.width, height: newValue - origin.y)
+        }
+        get {
+            let origin = self.base.frame.origin
+            let size = self.base.frame.size
+            return origin.y + size.height
+        }
+    }
+    
+    /// destinate
+    public var destinate: CGPoint {
+        set {
+            let origin = self.base.frame.origin
+            self.base.frame = CGRect.init(x: origin.x, y: origin.y, width: newValue.x - origin.x, height: newValue.y - size.height)
+        }
+        get {
+            let origin = self.base.frame.origin
+            let size = self.base.frame.size
+            return CGPoint.init(x: origin.x + size.width, y: origin.y + size.height)
+        }
+    }
+    
+    
+    
 }
 
 
