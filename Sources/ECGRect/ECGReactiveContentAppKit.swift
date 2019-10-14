@@ -85,6 +85,7 @@ extension ECGReactWrapper where Base: NSView {
         }
     }
     
+    
     //MARK:- Destinate
     /// trailing
     public var trailing: CGFloat {
@@ -124,6 +125,48 @@ extension ECGReactWrapper where Base: NSView {
             let origin = self.base.frame.origin
             let size = self.base.frame.size
             return CGPoint.init(x: origin.x + size.width, y: origin.y + size.height)
+        }
+    }
+    
+    //MARK:- Center
+    /// centerX
+    public var centerX: CGFloat {
+        set {
+            let origin = self.base.frame.origin
+            let size = self.base.frame.size
+            self.base.frame = CGRect.init(x: newValue - size.width / 2.0, y: origin.y, width: size.width, height: size.height)
+        }
+        get {
+            let origin = self.base.frame.origin
+            let size = self.base.frame.size
+            return origin.x + size.width / 2.0
+        }
+    }
+    
+    /// bottom
+    public var centerY: CGFloat {
+        set {
+            let origin = self.base.frame.origin
+            let size = self.base.frame.size
+            self.base.frame = CGRect.init(x: origin.x, y:  newValue - size.height / 2.0, width: size.width, height: size.height)
+        }
+        get {
+            let origin = self.base.frame.origin
+            let size = self.base.frame.size
+            return origin.y + size.height / 2.0
+        }
+    }
+    
+    /// destinate
+    public var center: CGPoint {
+        set {
+            let size = self.base.frame.size
+            self.base.frame = CGRect.init(x: newValue.x - size.width / 2.0, y: newValue.y - size.height / 2.0, width: size.width, height: size.height)
+        }
+        get {
+            let origin = self.base.frame.origin
+            let size = self.base.frame.size
+            return CGPoint.init(x: origin.x + size.width / 2.0, y: origin.y + size.height / 2.0)
         }
     }
     
