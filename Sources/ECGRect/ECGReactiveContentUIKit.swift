@@ -172,15 +172,53 @@ extension ECGReactWrapper where Base: UIView {
     
 }
 
+
 extension ECGReactWrapper where Base: UIView {
-    //MARK:- Equals
     
+    //MARK:- Coordinate
     /// Abscissa
     /// - Parameter block: block in equals
     /// - Parameter Equals: equalization to blocks
     public func locAbscissa(_ block: CGFloat, in Equals: CGFloat) -> CGFloat {
-        
+        let origin = self.base.frame.origin
+        let size = self.base.frame.size
+        return origin.x + size.width / Equals * block
     }
+    
+    /// Ordinate
+    /// - Parameter block: block in equals
+    /// - Parameter Equals: equalization to blocks
+    public func locOrdinate(_ block: CGFloat, in Equals: CGFloat) -> CGFloat {
+        let origin = self.base.frame.origin
+        let size = self.base.frame.size
+        return origin.y + size.height / Equals * block
+    }
+    
+    /// coordinate
+    /// - Parameter block: block in equals
+    /// - Parameter Equals: equalization to blocks
+    public func coordinate(_ block: CGFloat, in Equals: CGFloat) -> CGPoint {
+        let origin = self.base.frame.origin
+        let size = self.base.frame.size
+        return CGPoint.init(x: origin.x + size.width / Equals * block, y: origin.y + size.height / Equals * block)
+    }
+    
+    //MARK:- dimension
+    public func sizeHorizontal(_ blocks: CGFloat, in Equals: CGFloat) -> CGFloat {
+        let size = self.base.frame.size
+        return size.width / Equals * blocks
+    }
+    
+    public func sizeVertical(_ blocks: CGFloat, in Equals: CGFloat) -> CGFloat {
+        let size = self.base.frame.size
+        return size.height / Equals * blocks
+    }
+    
+    public func dimension(_ blocks: CGFloat, in Equals: CGFloat) -> CGSize {
+        let size = self.base.frame.size
+        return CGSize.init(width: size.width / Equals * blocks, height: size.height / Equals * blocks)
+    }
+    
 }
 
 
