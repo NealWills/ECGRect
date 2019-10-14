@@ -170,7 +170,17 @@ extension ECGReactWrapper where Base: UIView {
         }
     }
     
+}
+
+extension ECGReactWrapper where Base: UIView {
+    //MARK:- Equals
     
+    /// Abscissa
+    /// - Parameter block: block in equals
+    /// - Parameter Equals: equalization to blocks
+    public func locAbscissa(_ block: CGFloat, in Equals: CGFloat) -> CGFloat {
+        
+    }
 }
 
 
