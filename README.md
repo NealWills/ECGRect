@@ -1,8 +1,12 @@
-<img src="https://github.com/NealWills/ECGRect/blob/master/Icon/NW.png?raw=true" alt="This is my icon" width="40" height="30"> ECGRect: Extension Of CGRect
+<p align="center">
+<img src="https://github.com/NealWills/ECGRect/blob/master/Icon/NW.png?raw=true" alt="This is my icon" width="40" height="30">  ECGRect: Extension Of CGRect
+</p>
 
-[![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
+<p align="center">
+<a href="https://swift.org/package-manager/"><img src="https://img.shields.io/badge/SPM-supported-DE5C43.svg?style=flat"></a>
+<a href="http://onevcat.github.io/Kingfisher/"><img src="https://img.shields.io/cocoapods/p/Kingfisher.svg?style=flat"></a>
+</p>
 
-Extension Of CGRect
 
+ECGRect is a lightweight without injection, pure-Swift library, it can help you build components quickly. Of course, it can also be used in the Object-C.
 
-How To Use
